@@ -12,6 +12,9 @@ app.use((req, res, next) => {
 app.get("/get", middle, (req, res) => {
   res.send("Don't watch you are not going to take it");
 });
+app.get("/new_branch", (req, res) => {
+  res.send("new branch is coming");
+});
 
 app.get("/", (req, res) => {
   res.send("home");
