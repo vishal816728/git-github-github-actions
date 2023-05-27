@@ -4,6 +4,7 @@ jobs:
   first-job:
       runs-on: ubuntu-runner
       steps:
+        - uses: actions/checkout@v3
         - name: print greeting 
         - run: echo "Hello printing the message"
         - name: print Goodbye
