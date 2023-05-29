@@ -13,6 +13,7 @@ jobs:
       - name: Final Print
         run: echo "Successfully done Everything."
   deploy:
+    needs: [test] # is used when you want to run the deploy job after test job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
