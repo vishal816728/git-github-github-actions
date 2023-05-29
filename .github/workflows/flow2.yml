@@ -1,0 +1,29 @@
+name: RealWorkFlow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Final Print
+        run: echo "Successfully done Everything."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Final Print
+        run: echo "Successfully done in flow2 Everything."
+      - name: Build Project
+        run: echo "npm run build"
+      - name: Run the Deploy to Host it anywhere
+        run: echo "Deploying"
