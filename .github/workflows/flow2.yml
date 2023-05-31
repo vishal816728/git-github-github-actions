@@ -1,5 +1,5 @@
-name: RealWorkFlow
-on: push
+name: Flow2
+on: [push, workflow_dispatch] # workflow_dispatch is there because we want to manually trigger this event
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
       - name: Final Print
         run: echo "Successfully done Everything."
   deploy:
-    needs: [test] # is used when you want to run the deploy job after test job
+    needs: [test] # is used when you want to run the deploy job after test job (if test fails it will never start)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
